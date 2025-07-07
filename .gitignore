@@ -1,0 +1,35 @@
+# Directorios de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de la base de datos de Django
+db.sqlite3
+
+# Entorno virtual
+venv/
+env/
+pro6/
+
+# Archivos de configuración de Django sensibles (¡MUY IMPORTANTE!)
+# Si tienes un archivo settings.py que contiene claves SECRET_KEY,
+# o credenciales de base de datos que no quieres que sean públicas,
+# es mejor tenerlos en variables de entorno o en un archivo local
+# que no subas al repositorio. Por ahora, no lo incluyo directamente,
+# pero si lo tienes en un archivo separado, agrégalo aquí.
+
+# Archivos de medios y estáticos generados
+media/
+static_collected/ # Si tienes un directorio para collectstatic
+
+# Archivos de logs
+*.log
+
+# Archivos de IDEs (ej. VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
