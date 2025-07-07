@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Editar Tarea{% endblock %}
+
+{% block content %}
+    <h1>Editar Tarea: {{ todo.title }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary mt-3">Actualizar Tarea</button>
+        <a href="{% url 'todo_list' %}" class="btn btn-secondary mt-3">Cancelar</a>
+    </form>
+{% endblock %}

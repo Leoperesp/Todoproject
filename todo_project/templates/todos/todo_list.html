@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Mis Listas de Tareas{% endblock %}
+
+{% block content %}
+    <h1>Mis Tareas</h1>
+    <a href="{% url 'add_todo' %}" class="btn btn-success mb-3">Agregar Nueva Tarea</a>
+
+    {% if todos %}
+        <ul class="list-group">
+            {% for todo in todos %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <input type="checkbox" {% if todo.completed %}checked{% endif %} onclick="window.location.href='{% url 'toggle_todo' todo.pk %}';">
+                        <span class="{% if todo.completed %}text-muted text-decoration-line-through{% endif %} ms-2">{{ todo.title }}</span>
+                        {% if todo.description %}
+                            <br><small class="text-muted">{{ todo.description }}</small>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <a href="{% url 'edit_todo' todo.pk %}" class="btn btn-sm btn-info me-2">Editar</a>
+                        <a href="{% url 'delete_todo' todo.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <div class="alert alert-info mt-3" role="alert">
+            No tienes tareas pendientes. ¡Añade una!
+        </div>
+    {% endif %}
+{% endblock %}

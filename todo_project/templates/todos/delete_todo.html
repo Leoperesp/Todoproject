@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Eliminar Tarea{% endblock %}
+
+{% block content %}
+    <div class="alert alert-warning" role="alert">
+        ¿Estás seguro que quieres eliminar la tarea "{{ todo.title }}"?
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, Eliminar</button>
+        <a href="{% url 'todo_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}
