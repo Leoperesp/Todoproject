@@ -4,8 +4,6 @@
 
 {% block content %}
     <h1>Mis Tareas</h1>
-    <a href="{% url 'add_todo' %}" class="btn btn-success mb-3">Agregar Nueva Tarea</a>
-
     {% if todos %}
         <ul class="list-group">
             {% for todo in todos %}

@@ -24,7 +24,7 @@
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'profile' %}">Perfil ({{ user.username }})</a>
+                            <button onclick="window.location.href='{% url 'profile' %}'">{{ user.username }}</button>
                         </li>
                         <li class="nav-item">
                             <form method="post" action="{% url 'logout' %}">
